@@ -1,5 +1,5 @@
 ## 🚀 Live Demo
-**[View the Live Project Here](YOUR_LINK_HERE)**
+**[View the Live Project Here](https://rania-essam.github.io/SortingVisualizer_vb/)**
 
 ## 🧪 The "Vibecoding" Experiment
 This project is an exercise in **Vibecoding**—a collaborative development approach where I act as the Lead Architect and System Designer, while leveraging GitHub Copilot and LLMs to accelerate implementation. 
