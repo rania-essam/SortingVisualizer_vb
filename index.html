@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorting Visualizer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>🎨 Sorting Visualizer</h1>
+            <p class="subtitle">Watch algorithms sort in real-time with animation</p>
+        </header>
+
+        <!-- Control Panel -->
+        <div class="control-panel">
+            <div class="control-group">
+                <label for="arraySize">Array Size:</label>
+                <input type="range" id="arraySize" min="10" max="500" value="50" class="slider">
+                <span id="sizeDisplay">50</span>
+            </div>
+
+            <div class="control-group">
+                <label for="speed">Animation Speed:</label>
+                <input type="range" id="speed" min="1" max="100" value="50" class="slider">
+                <span id="speedDisplay">50ms</span>
+            </div>
+
+            <div class="control-group">
+                <label for="algorithm">Sorting Algorithm:</label>
+                <select id="algorithm" class="select-dropdown">
+                    <option value="quicksort">Quick Sort</option>
+                    <option value="mergesort">Merge Sort</option>
+                    <option value="bubblesort">Bubble Sort</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="customArray">Custom Array (comma-separated numbers):</label>
+                <input type="text" id="customArray" placeholder="e.g., 5,3,8,1,9" class="text-input">
+            </div>
+
+            <div class="control-group">
+                <label for="parallelized">
+                    <input type="checkbox" id="parallelized" disabled>
+                    Use Web Workers (Quick Sort only)
+                </label>
+            </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="action-buttons">
+            <button id="generateBtn" class="btn btn-primary">Generate Array</button>
+            <button id="sortBtn" class="btn btn-success" disabled>Start Sort</button>
+            <button id="resetBtn" class="btn btn-secondary" disabled>Reset</button>
+        </div>
+
+        <!-- Statistics -->
+        <div class="statistics">
+            <div class="stat">
+                <span class="stat-label">Comparisons:</span>
+                <span id="comparisons" class="stat-value">0</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">Swaps:</span>
+                <span id="swaps" class="stat-value">0</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">Time:</span>
+                <span id="time" class="stat-value">0ms</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">Status:</span>
+                <span id="status" class="stat-value">Ready</span>
+            </div>
+        </div>
+
+        <div id="sortedOutputSection" class="sorted-output">
+            <h3>Sorted Array</h3>
+            <pre id="sortedArrayText" class="sorted-array-text">[]</pre>
+        </div>
+
+        <!-- Canvas Container -->
+        <div class="canvas-container">
+            <canvas id="sortingCanvas"></canvas>
+        </div>
+
+        <!-- Info Section -->
+        <div class="info-section">
+            <h3>About This Visualizer</h3>
+            <ul>
+                <li><strong>Quick Sort:</strong> Divide-and-conquer algorithm with O(n log n) average complexity</li>
+                <li><strong>Merge Sort:</strong> Stable sorting with guaranteed O(n log n) complexity</li>
+                <li><strong>Bubble Sort:</strong> Simple comparison-based sort with O(n²) complexity</li>
+                <li><strong>Web Workers:</strong> Parallel processing to prevent UI freezing on large arrays</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="sortingAlgorithms.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
